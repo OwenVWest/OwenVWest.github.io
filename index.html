@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <h1 style="text-align: center;">Owen Van Westenberg Personal Website</h1>
+    <h1 style="text-align: center;" id = "myTitle">Owen Van Westenberg Personal Website</h1>
         <style>
             h1 {background-color: whitesmoke; margin: 20px; border-radius: 50px; border-color: black; border-width: 10px;}
         </style>
@@ -17,9 +17,28 @@
         <style> 
             button {border-width: 10px; border-radius: 5px;}
         </style>
-    <a href="file:///home/vanwestenbergo@CSGP.EDU/OwenVWest.github.io/index2.html">My Projects</a>
+    <a href="/home/vanwestenbergo@CSGP.EDU/WTwork&code/OwenVWest.github.io/index2.html">My Projects</a>
         
     </button>
+  <button id="darkModeToggleButton">Toggle Dark Mode</button>
+
+    <script>
+        let isDarkMode = false;
+
+        document.getElementById('darkModeToggleButton').onclick = function() {
+            if (isDarkMode) {
+                document.body.style.backgroundColor = "#6699CC";
+                document.body.style.color = 'black';
+                isDarkMode = false;
+            } else {
+                document.body.style.backgroundColor = '#0A1319';
+                document.body.style.color = 'white';
+                document.getElementById("myTitle").style.color = "black";
+                isDarkMode = true;
+            }
+
+        };
+    </script>
     <hr>
     <h2 style="text-align: center;">About me: </h2>
     <p style="text-align: center;">Hi, im Owen Van Westenberg (or West for short), A Cybersecurity and Computer Science student at Warren Tech and student at Columbine HS.</p>
@@ -28,7 +47,36 @@
         <li>I have been skiing every year for 12 years</li>
         <a href = "https://github.com/OwenVWest/OwenVWest.github.io/blob/main/selfie.jpg" target = "_blank">
         
-        <img src="selfie.jpg" alt = "Image from me skiing at loveland ski resort" height="200" width="150">
+        <img src="selfie.jpg" alt = "Image from me skiing at loveland ski resort" height="200" width="150" id = "imag">
+            <script>
+                function typeEffect(element, text, speed = 50) {
+                  // create a counter to iterate over the characters in `text`
+                    let i = 0;
+    
+               // create a function that executes every `speed` microseconds
+                  const timer = setInterval(() => {
+                 // while the counter is less than the length of the `text` string
+                    if (i < text.length) {
+               // update the contents of the HTML `element` by adding the next character in the `text` string to it
+               element.innerHTML += text.charAt(i);
+               i++;
+               } else {
+              // when finished, stop the loop
+                  clearInterval(timer);
+        }
+    }, speed);
+}
+            const paragraph = document.getElementById("owPain");
+            let currentText = "";
+            document.getElementById("imag").onclick = function() {
+                currentText = currentText + "Ow "
+                aragraph.textContent = currentText;
+            }
+                
+
+            </script>
+            <p id = "owPain"></p>
+
     </a>
         <li>I enjoy playing various video games with my friends</li>
         <li>I go camping in the mountains whenever im not able to ski </li>
@@ -43,7 +91,7 @@
         <li>Python</li>
         <li>Javascript</li>
         <li>LUA</li>
-        <li>C#</li>
+        <li>C++</li>
         <li>Java</li>
     </ol>
     <hr>
